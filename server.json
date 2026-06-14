@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "com.somosvelora/velora",
+  "description": "Argentine agentic commerce toolkit over MCP. Real ARCA/AFIP electronic invoicing, MercadoPago payments, Andreani logistics, cash register, catalog and WhatsApp — authenticated, production-grade tools for AI agents operating in Argentina. The only MCP server that executes real AFIP invoicing + MercadoPago payments (not just docs/search).",
+  "repository": {
+    "url": "https://github.com/crossi-dev/velora-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://somosvelora.com",
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://tools.somosvelora.com/api/mcp"
+    }
+  ]
+}
