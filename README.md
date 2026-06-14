@@ -1,10 +1,10 @@
 # Velora — Argentine Commerce MCP
 
-**The first MCP server to *execute* real AFIP/ARCA electronic invoicing — not just docs or search.**
+**A hosted, multi-capability commerce toolkit for Argentina — real AFIP invoicing, MercadoPago, logistics, catalog and WhatsApp behind one authenticated endpoint.**
 
 Velora is a hosted [Model Context Protocol](https://modelcontextprotocol.io) server that gives AI agents tools to operate commerce in Argentina: fiscal invoicing (AFIP/ARCA), payments (MercadoPago), logistics (Andreani / PedidosYa), catalog, cash register, and WhatsApp messaging — authenticated and tenant-isolated.
 
-> Existing AFIP MCP servers only **search the documentation**. Velora issues a real **CAE** (the AFIP authorization code) against production web services.
+> Other AFIP MCP servers exist (some emit invoices, some only search the docs). Velora's angle is the **bundle**: fiscal is one of several commerce rails — payments, logistics, catalog, messaging — exposed through a single hosted, authenticated endpoint, so an agent runs a whole Argentine business, not just invoicing.
 
 ## Endpoint
 

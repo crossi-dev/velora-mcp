@@ -1,13 +1,13 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
   "name": "com.somosvelora/velora",
-  "description": "First MCP server to execute real AFIP/ARCA invoicing in Argentina — not just docs/search.",
+  "description": "Hosted Argentine commerce MCP: real AFIP invoicing, MercadoPago, logistics, catalog & WhatsApp.",
   "repository": {
     "url": "https://github.com/crossi-dev/velora-mcp",
     "source": "github"
   },
   "websiteUrl": "https://somosvelora.com",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "remotes": [
     {
       "type": "streamable-http",
