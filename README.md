@@ -49,6 +49,8 @@ The pure fiscal helpers (`validate_cuit`, `split_iva`, and the rest) are also av
 | **Sales & Cash** | register sales, returns, cash-register movements and balance |
 | **Customers & Suppliers** | find / upsert customers, supplier management |
 | **Messaging** | WhatsApp text & template sends |
+| **Reports** | `query_sales` — sales analytics |
+| **Connection** | `connection_status` — per-integration setup state (call this first) |
 
 > **Maturity / what's live.** Fiscal (AFIP) and the Pure tools are production-verified. Payments, Logistics and Messaging are real tools that require **per-tenant credential onboarding** (connect MercadoPago / Andreani / WhatsApp) — until a tenant connects them they return demo data or fail gracefully, so don't wire them into a production flow before onboarding. `emit_invoice` issues a real CAE only once ARCA onboarding is complete (check with `get_fiscal_readiness`); otherwise it returns a clearly-flagged sandbox response (`sandbox: true`), never a fake CAE presented as real.
 
