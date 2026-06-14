@@ -43,7 +43,7 @@ The pure fiscal helpers (`validate_cuit`, `split_iva`, and the rest) are also av
 
 | Pack | What it does |
 |------|--------------|
-| **Fiscal (AFIP/ARCA)** | `emit_invoice` (real CAE), `emit_nota` (credit/debit note), `get_fiscal_readiness` |
+| **Fiscal (AFIP/ARCA)** | `emit_invoice` (real CAE — Factura A/B/C + Consumidor Final), `consultar_comprobante` / `consultar_padron` (invoice + taxpayer lookup), `get_fiscal_readiness`. `emit_nota` (NC/ND): **sandbox only today — real credit/debit-note emission is in progress.** |
 | **Pure (always on)** | `validate_cuit`, `validate_cuil`, `validate_cbu`, `build_afip_qr`, `format_ars`, `to_afip_date`, `split_iva`, `describe_invoice_type`, `parse_ar_amount` |
 | **Payments** | MercadoPago links, tracked payments, payment-intent status |
 | **Logistics** | quote / create / track shipments (Andreani, PedidosYa) |
@@ -54,7 +54,7 @@ The pure fiscal helpers (`validate_cuit`, `split_iva`, and the rest) are also av
 | **Reports** | `query_sales` — sales analytics |
 | **Connection** | `connection_status` — per-integration setup state (call this first) |
 
-> **Maturity / what's live.** Fiscal (AFIP) and the Pure tools are production-verified. Payments, Logistics and Messaging are real tools that require **per-tenant credential onboarding** (connect MercadoPago / Andreani / WhatsApp) — until a tenant connects them they return demo data or fail gracefully, so don't wire them into a production flow before onboarding. `emit_invoice` issues a real CAE only once ARCA onboarding is complete (check with `get_fiscal_readiness`); otherwise it returns a clearly-flagged sandbox response (`sandbox: true`), never a fake CAE presented as real.
+> **Maturity / what's live.** `emit_invoice` (Factura A/B/C + Consumidor Final), the lookup tools, and the Pure tools are production-verified against real AFIP. `emit_nota` (NC/ND) currently emits in **sandbox only** — real credit/debit-note emission is not yet wired (it returns `sandbox: true`, never a fake CAE). Payments, Logistics and Messaging are real tools that require **per-tenant credential onboarding** (connect MercadoPago / Andreani / WhatsApp) — until a tenant connects them they return demo data or fail gracefully, so don't wire them into a production flow before onboarding. `emit_invoice` issues a real CAE only once ARCA onboarding is complete (check with `get_fiscal_readiness`); otherwise it returns a clearly-flagged sandbox response (`sandbox: true`), never a fake CAE presented as real.
 
 Full machine-readable catalog: [`tools.somosvelora.com/llms.txt`](https://tools.somosvelora.com/llms.txt)
 
