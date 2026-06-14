@@ -1,10 +1,10 @@
 # Velora — Argentine Commerce MCP
 
-**The only MCP server that *executes* real AFIP/ARCA electronic invoicing — not just docs or search.**
+**The first MCP server to *execute* real AFIP/ARCA electronic invoicing — not just docs or search.**
 
-Velora is a hosted [Model Context Protocol](https://modelcontextprotocol.io) server that gives AI agents production-grade tools to operate commerce in Argentina: fiscal invoicing (AFIP/ARCA), payments (MercadoPago), logistics (Andreani / PedidosYa), catalog, cash register, and WhatsApp messaging — all authenticated and tenant-isolated.
+Velora is a hosted [Model Context Protocol](https://modelcontextprotocol.io) server that gives AI agents tools to operate commerce in Argentina: fiscal invoicing (AFIP/ARCA), payments (MercadoPago), logistics (Andreani / PedidosYa), catalog, cash register, and WhatsApp messaging — authenticated and tenant-isolated.
 
-> Existing AFIP MCP servers only **search the documentation**. Velora is the only one that issues a real **CAE** (the AFIP authorization code) against production web services.
+> Existing AFIP MCP servers only **search the documentation**. Velora issues a real **CAE** (the AFIP authorization code) against production web services.
 
 ## Endpoint
 
@@ -14,7 +14,9 @@ https://tools.somosvelora.com/api/mcp
 
 Transport: streamable HTTP. Auth: API key (per-tenant HMAC) or OAuth 2.1 (WorkOS bearer). Any MCP client — Claude, OpenAI, Gemini, or your own agent — consumes the same endpoint.
 
-## Connect (Claude Desktop / any MCP client)
+## Connect
+
+Point any MCP client that supports a remote **streamable HTTP** server at the endpoint, with your credentials as headers:
 
 ```jsonc
 {
@@ -31,7 +33,9 @@ Transport: streamable HTTP. Auth: API key (per-tenant HMAC) or OAuth 2.1 (WorkOS
 }
 ```
 
-Request access at [somosvelora.com](https://somosvelora.com).
+The exact config key (`type`/`transport`) varies by client — use your client's remote/HTTP MCP server format. Request access at [somosvelora.com](https://somosvelora.com).
+
+The pure fiscal helpers (`validate_cuit`, `split_iva`, and the rest) are also available **without authentication** at `https://tools.somosvelora.com/api/mcp/public`.
 
 ## Tool packs
 
@@ -46,6 +50,8 @@ Request access at [somosvelora.com](https://somosvelora.com).
 | **Customers & Suppliers** | find / upsert customers, supplier management |
 | **Messaging** | WhatsApp text & template sends |
 
+> **Maturity / what's live.** Fiscal (AFIP) and the Pure tools are production-verified. Payments, Logistics and Messaging are real tools that require **per-tenant credential onboarding** (connect MercadoPago / Andreani / WhatsApp) — until a tenant connects them they return demo data or fail gracefully, so don't wire them into a production flow before onboarding. `emit_invoice` issues a real CAE only once ARCA onboarding is complete (check with `get_fiscal_readiness`); otherwise it returns a clearly-flagged sandbox response (`sandbox: true`), never a fake CAE presented as real.
+
 Full machine-readable catalog: [`tools.somosvelora.com/llms.txt`](https://tools.somosvelora.com/llms.txt)
 
 ## Why a managed layer
@@ -54,8 +60,9 @@ AFIP's web services (WSAA + WSFE) are notoriously painful: attached PKCS#7 CMS s
 
 ## Status
 
-- ✅ Real AFIP invoicing verified in production (live CAE issuance).
+- ✅ Real AFIP invoicing verified in production (live CAE issuance for an onboarded tenant).
 - ✅ MercadoPago payments and the pure validation/formatting tools are live.
+- 🔧 Logistics & messaging require per-tenant credential onboarding (see **Maturity** above).
 
 ## Links
 
