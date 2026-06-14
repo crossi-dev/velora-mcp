@@ -12,7 +12,9 @@ Velora is a hosted [Model Context Protocol](https://modelcontextprotocol.io) ser
 https://tools.somosvelora.com/api/mcp
 ```
 
-Transport: streamable HTTP. Auth: API key (per-tenant HMAC) or OAuth 2.1 (WorkOS bearer). Any MCP client — Claude, OpenAI, Gemini, or your own agent — consumes the same endpoint.
+Transport: streamable HTTP. Auth: API key (per-tenant HMAC) or OAuth 2.1 (WorkOS bearer). Any MCP client — Claude, OpenAI, Gemini, Cursor, or your own agent — consumes the same endpoint.
+
+**Free during early access.** No usage cost while we onboard the first builders — the fiscal and pure tools run no LLM on our side, so it stays cheap to keep open.
 
 ## Connect
 
