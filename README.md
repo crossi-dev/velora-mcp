@@ -1,3 +1,5 @@
+> This repo contains the public manifest/docs for a hosted service — the full implementation runs in production as part of Velora.
+
 # Velora — Argentine Commerce MCP
 
 **A hosted, multi-capability commerce toolkit for Argentina — real AFIP invoicing, MercadoPago, logistics, catalog and WhatsApp behind one authenticated endpoint.**
