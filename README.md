@@ -58,7 +58,13 @@ The pure fiscal helpers (`validate_cuit`, `split_iva`, and the rest) are also av
 
 > **Maturity / what's live.** `emit_invoice` (Factura A/B/C + Consumidor Final), the lookup tools, and the Pure tools are production-verified against real AFIP. `emit_nota` (NC/ND) currently emits in **sandbox only** — real credit/debit-note emission is not yet wired (it returns `sandbox: true`, never a fake CAE). Payments, Logistics and Messaging are real tools that require **per-tenant credential onboarding** (connect MercadoPago / Andreani / WhatsApp) — until a tenant connects them they return demo data or fail gracefully, so don't wire them into a production flow before onboarding. `emit_invoice` issues a real CAE only once ARCA onboarding is complete (check with `get_fiscal_readiness`); otherwise it returns a clearly-flagged sandbox response (`sandbox: true`), never a fake CAE presented as real.
 
-Full machine-readable catalog: [`tools.somosvelora.com/llms.txt`](https://tools.somosvelora.com/llms.txt)
+Full machine-readable catalog — list every tool with a `tools/list` call against the public endpoint (no auth):
+
+```bash
+curl -s https://tools.somosvelora.com/api/mcp/public \
+  -H 'Content-Type: application/json' -H 'Accept: application/json, text/event-stream' \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}'
+```
 
 ## Why a managed layer
 
