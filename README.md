@@ -86,4 +86,4 @@ AFIP's web services (WSAA + WSFE) are notoriously painful: attached PKCS#7 CMS s
 
 This repository is the public manifest and documentation for the Velora MCP server. The server itself is hosted; this repo carries the `server.json` registry manifest and connection docs.
 
-> Built by directing Claude Code — scoped, generated, and verified at runtime. The method is the point.
+> Built by directing Claude Code — scoped, generated, and verified at runtime. The method is the point — the same one behind 2 fixes merged into [Mastra](https://github.com/mastra-ai/mastra) (26k★ TS AI-agent framework): [#19604](https://github.com/mastra-ai/mastra/pull/19604), [#19610](https://github.com/mastra-ai/mastra/pull/19610).
