@@ -85,3 +85,5 @@ AFIP's web services (WSAA + WSFE) are notoriously painful: attached PKCS#7 CMS s
 ---
 
 This repository is the public manifest and documentation for the Velora MCP server. The server itself is hosted; this repo carries the `server.json` registry manifest and connection docs.
+
+> Built by directing Claude Code — scoped, generated, and verified at runtime. The method is the point.
