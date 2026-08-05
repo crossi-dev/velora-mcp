@@ -2,6 +2,8 @@
 
 # Velora — Argentine Commerce MCP
 
+> ⚠️ **The hosted endpoint is temporarily offline.** The service it fronts is paused, so `tools.somosvelora.com` returns 404 right now — the manifest and the tool contracts below are still accurate, but the URLs will not answer until it is back up. Nothing here is abandoned; the docs are kept honest on purpose.
+
 **A hosted, multi-capability commerce toolkit for Argentina — real AFIP invoicing, MercadoPago, logistics, catalog and WhatsApp behind one authenticated endpoint.**
 
 Velora is a hosted [Model Context Protocol](https://modelcontextprotocol.io) server that gives AI agents tools to operate commerce in Argentina: fiscal invoicing (AFIP/ARCA), payments (MercadoPago), logistics (Andreani / PedidosYa), catalog, cash register, and WhatsApp messaging — authenticated and tenant-isolated.
