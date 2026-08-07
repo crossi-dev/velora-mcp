@@ -82,7 +82,7 @@ AFIP's web services (WSAA + WSFE) are notoriously painful: attached PKCS#7 CMS s
 
 - Site: [somosvelora.com](https://somosvelora.com)
 - Toolkit endpoint: [tools.somosvelora.com](https://tools.somosvelora.com)
-- Blog (AFIP integration field notes): [somosvelora.com/blog](https://somosvelora.com/blog)
+- Blog (AFIP integration field notes): [somosvelora.com/blog](https://somosvelora.com/blog) — ⚠️ currently returns 404 while the site's `/blog` route is down
 
 ---
 
